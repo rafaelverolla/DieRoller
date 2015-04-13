@@ -76,8 +76,8 @@
         android:text="@string/willpower"
         android:id="@+id/willcheckbox"
         android:layout_above="@+id/speccheckbox"
-        android:layout_alignLeft="@+id/speccheckbox"
-        android:layout_alignStart="@+id/speccheckbox" />
+        android:layout_alignRight="@+id/result_display"
+        android:layout_alignEnd="@+id/result_display" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -85,8 +85,8 @@
         android:text="@string/specialization"
         android:id="@+id/speccheckbox"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/result_display"
-        android:layout_alignStart="@+id/result_display" />
+        android:layout_alignLeft="@+id/willcheckbox"
+        android:layout_alignStart="@+id/willcheckbox" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,6 +106,15 @@
         android:text="XXXXXXXXX"
         android:id="@+id/result_display"
         android:layout_below="@+id/result"
+        android:layout_toRightOf="@+id/number_of_die"
+        android:layout_toEndOf="@+id/number_of_die" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/roll"
+        android:id="@+id/roll_button"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp" />
+        android:layout_marginBottom="36dp" />
 </RelativeLayout>
