@@ -39,7 +39,7 @@
         android:layout_below="@+id/number_of_sides_input"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="33dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,7 +47,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/result"
         android:id="@+id/result"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/number_of_die"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -56,18 +57,20 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/result_display"
-        android:layout_marginTop="84dp"
+        android:singleLine="false"
+        android:nestedScrollingEnabled="true"
+        android:text="5555"
         android:layout_below="@+id/result"
-        android:layout_toRightOf="@+id/number_of_die"
-        android:layout_toEndOf="@+id/number_of_die"
-        android:singleLine="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/roll"
         android:id="@+id/roll_button"
-        android:layout_above="@+id/result"
+        android:onClick="Roll"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <EditText
