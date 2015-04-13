@@ -2,5 +2,19 @@
     <string name="app_name">DieRoller</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="type_of_die">Number of sides:</string>
+    <string-array name="number_of_sides_string">
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>20</item>
+        <item>100</item>
+    </string-array>
+    <string name="number_of_die">Number of die:</string>
+    <string name="result">Result:</string>
+    <string name="roll">Roll!</string>
     <string name="action_settings">Settings</string>
 </resources>
