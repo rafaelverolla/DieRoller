@@ -4,8 +4,16 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.Random;
+
+import static java.lang.Integer.parseInt;
 
 
 public class OwodActivity extends ActionBarActivity {
@@ -49,4 +57,86 @@ public class OwodActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void Roll(View view) {///used xml. will need change to onclicklistener when using fragments.
+
+
+        ///get the value selected in the spinner, for the diff
+        Spinner mySpinner=(Spinner) findViewById(R.id.diff_input);
+        Integer Diff = parseInt(mySpinner.getSelectedItem().toString());
+        ///end of getting the value of the spinner
+
+        ///start of getting the number of die
+        EditText NumberOfDieInput=(EditText) findViewById(R.id.number_of_die_input);
+        Integer Number_Of_Die = parseInt(NumberOfDieInput.getText().toString());
+        ///end of getting the number of die
+
+        ///start of getting the threshold
+        EditText ThresholdInput=(EditText) findViewById(R.id.threshold_input);
+        Integer Threshold = parseInt(ThresholdInput.getText().toString());
+        ///end of getting
+
+        CheckBox Willpower = (CheckBox) findViewById(R.id.willcheckbox);//getting willpower
+        CheckBox Spec = (CheckBox) findViewById(R.id.speccheckbox);//getting spec
+
+        Random random = new Random();//creates an object to generate random numbers
+        String Result="";
+        int i=1; int successes=0; int dice;
+        if(Willpower.isChecked()){
+            successes++;
+        }
+
+        while(i<=Number_Of_Die){//rolling the die
+            dice=RandomInteger(1,10,random);//generates a number
+            if(dice>=Diff){
+                successes++;
+            }
+            if(dice==1){
+                successes--;
+            }
+            if(dice==10&&Spec.isChecked()){
+                i--;
+            }
+            Result = Result.concat(Integer.toString(dice));//put on the result string
+
+            if(i!=Number_Of_Die) {
+                Result = Result.concat(", ");
+            }
+            i++;
+        }
+        Result = Result.concat(". ");
+
+        if(successes>=Threshold && successes!=0){//checking the results
+            Result= Result.concat(Integer.toString(successes));
+            Result= Result.concat(" ");
+            Result= Result.concat(this.getString(R.string.success));
+        }else if (successes<0){
+            Result= Result.concat(this.getString(R.string.criticalfailure));
+        }else if(successes<Threshold || successes==0){
+            Result= Result.concat(this.getString(R.string.failure));
+        }
+
+
+
+
+        ///Displaying the result
+        final TextView Result_Display= (TextView) findViewById(R.id.result_display);
+        Result_Display.setText(Result);
+        ///end of displaying the result
+    }
+
+    private static int RandomInteger(int aStart, int aEnd, Random aRandom){///function that generates a random number between 1 and N
+
+
+
+        //get the range, casting to long to avoid overflow problems
+        long range = (long)aEnd - (long)aStart + 1;
+        // compute a fraction of the range, 0 <= frac < range
+        long fraction = (long)(range * aRandom.nextDouble());
+        int randomNumber =  (int)(fraction + aStart);
+
+        return randomNumber;
+    }
+
+
 }

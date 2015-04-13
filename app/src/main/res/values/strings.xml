@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">DieRoller</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="type_of_die">Number of sides:</string>
     <string-array name="number_of_sides_string">
@@ -28,16 +27,19 @@
     <string name="result">Result:</string>
     <string name="roll">Roll!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_menu">Die Roller</string>
     <string name="generic">Generic</string>
     <string name="nwod">nWoD</string>
     <string name="owod">oWoD</string>
     <string name="gurps">G.U.R.P.S.</string>
     <string name="d20">D20</string>
-    <string name="title_activity_owod">OwodActivity</string>
+    <string name="title_activity_owod">Old WoD DieRoller</string>
     <string name="difficulty">Difficulty:</string>
     <string name="threshold">Threshold:</string>
     <string name="willpower">Willpower</string>
     <string name="specialization">Specialization</string>
+    <string name="success">successes!</string>
+    <string name="failure">Failure!</string>
+    <string name="criticalfailure">CRITICAL FAILURE!</string>
 
 </resources>

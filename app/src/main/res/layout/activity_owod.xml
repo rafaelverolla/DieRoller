@@ -68,7 +68,8 @@
         android:id="@+id/threshold_input"
         android:layout_alignTop="@+id/threshold"
         android:layout_alignLeft="@+id/diff_input"
-        android:layout_alignStart="@+id/diff_input" />
+        android:layout_alignStart="@+id/diff_input"
+        android:text="0" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -116,5 +117,6 @@
         android:id="@+id/roll_button"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp" />
+        android:layout_marginBottom="36dp"
+        android:onClick="Roll" />
 </RelativeLayout>
