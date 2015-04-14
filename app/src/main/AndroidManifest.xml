@@ -28,6 +28,10 @@
             android:name=".D20Activity"
             android:label="@string/title_activity_d20" >
         </activity>
+        <activity
+            android:name=".Shadowrun5thActivity"
+            android:label="@string/title_activity_shadowrun5th" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,26 +1,24 @@
 package com.example.rafael.dieroller;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 
-public class MenuActivity extends ActionBarActivity {
+public class Shadowrun5thActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_shadowrun5th);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_shadowrun5th, menu);
         return true;
     }
 
@@ -37,25 +35,5 @@ public class MenuActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    public void OpenD20(View view){
-
-        Intent intent = new Intent(this, D20Activity.class);
-        MenuActivity.this.startActivity(intent);
-    }
-    public void OpenOwod(View view){
-
-        Intent intent = new Intent(this, OwodActivity.class);
-        MenuActivity.this.startActivity(intent);
-    }
-    public void OpenShadowrun5(View view){
-
-        Intent intent = new Intent(this, Shadowrun5thActivity.class);
-        MenuActivity.this.startActivity(intent);
-    }
-    public void OpenMain(View view){
-
-        Intent intent = new Intent(this, MainActivity.class);
-        MenuActivity.this.startActivity(intent);
     }
 }

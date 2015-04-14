@@ -23,7 +23,7 @@
         <item>9</item>
         <item>10</item>
     </string-array>
-    <string name="number_of_die">Number of die:</string>
+    <string name="number_of_die">Dice pool:</string>
     <string name="result">Result:</string>
     <string name="roll">Roll!</string>
     <string name="action_settings">Settings</string>
@@ -31,7 +31,7 @@
     <string name="generic">Generic</string>
     <string name="nwod">nWoD</string>
     <string name="owod">oWoD</string>
-    <string name="gurps">G.U.R.P.S.</string>
+    <string name="shadowrun5">Shadowrun 5th</string>
     <string name="d20">D20</string>
     <string name="title_activity_owod">Old WoD DieRoller</string>
     <string name="difficulty">Difficulty:</string>
@@ -47,5 +47,8 @@
     <string name="roll_d20">Roll d20!</string>
     <string name="damage">Damage:</string>
     <string name="modifier">Modifier:</string>
+    <string name="title_activity_shadowrun5th">Shadowrun5thActivity</string>
+    <string name="initiative">Initiative:</string>
+    <string name="roll_init">Roll Initiative!</string>
 
 </resources>

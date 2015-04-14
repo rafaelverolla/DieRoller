@@ -15,7 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/button2"
         android:layout_alignStart="@+id/button2"
-        android:onClick="OpenMain" />
+        android:onClick="OpenMain"
+        android:width="200dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +25,8 @@
         android:layout_above="@+id/button3"
         android:layout_alignLeft="@+id/button3"
         android:layout_alignStart="@+id/button3"
-        android:layout_marginBottom="35dp" />
+        android:layout_marginBottom="35dp"
+        android:width="200dp" />
 
         <Button
         android:layout_width="wrap_content"
@@ -34,16 +36,19 @@
             android:layout_centerVertical="true"
             android:layout_alignLeft="@+id/button4"
             android:layout_alignStart="@+id/button4"
-            android:onClick="OpenOwod" />
+            android:onClick="OpenOwod"
+            android:width="200dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/gurps"
+        android:text="@string/shadowrun5"
         android:id="@+id/button4"
         android:layout_above="@+id/button5"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="38dp"
-        android:layout_alignStart="@+id/button5" />
+        android:layout_alignStart="@+id/button5"
+        android:width="200dp"
+        android:onClick="OpenShadowrun5" />
 
 
     <Button
@@ -54,5 +59,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="75dp"
-        android:onClick="OpenD20" />
+        android:onClick="OpenD20"
+        android:width="200dp" />
 </RelativeLayout>
