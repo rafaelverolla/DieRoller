@@ -109,7 +109,6 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/result_display"
-        android:text="xxx"
         android:layout_alignTop="@+id/result"
         android:layout_alignLeft="@+id/threshold_input"
         android:layout_alignStart="@+id/threshold_input" />

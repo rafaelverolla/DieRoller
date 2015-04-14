@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.rafael.dieroller.Shadowrun5thActivity">
+    tools:context="com.example.rafael.dieroller.Shadowrun5thActivity"
+    android:nestedScrollingEnabled="false">
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,10 +38,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/threshold"
         android:id="@+id/threshold"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/number_of_die"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,7 +60,7 @@
         android:layout_height="wrap_content"
         android:text="@string/roll"
         android:id="@+id/roll"
-        android:layout_marginTop="27dp"
+        android:onClick="Roll"
         android:layout_below="@+id/threshold_input"
         android:layout_centerHorizontal="true" />
 
@@ -94,7 +95,8 @@
         android:width="70dp"
         android:layout_above="@+id/initiative"
         android:layout_alignRight="@+id/threshold_input"
-        android:layout_alignEnd="@+id/threshold_input" />
+        android:layout_alignEnd="@+id/threshold_input"
+        android:text="0" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -105,7 +107,8 @@
         android:width="70dp"
         android:layout_alignBottom="@+id/initiative"
         android:layout_alignRight="@+id/number_of_die_init_input"
-        android:layout_alignEnd="@+id/number_of_die_init_input" />
+        android:layout_alignEnd="@+id/number_of_die_init_input"
+        android:text="0" />
 
     <Button
         android:layout_width="wrap_content"
@@ -114,7 +117,8 @@
         android:id="@+id/roll_init"
         android:layout_marginTop="27dp"
         android:layout_below="@+id/initiative_input"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="RollInit" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -122,17 +126,17 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/result"
         android:id="@+id/result"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="27dp"
         android:layout_below="@+id/roll_init"
-        android:layout_alignLeft="@+id/number_of_die_init"
-        android:layout_alignStart="@+id/number_of_die_init" />
+        android:layout_alignLeft="@+id/initiative"
+        android:layout_alignStart="@+id/initiative" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/result_display"
-        android:layout_alignBottom="@+id/result"
-        android:layout_alignRight="@+id/initiative_input"
-        android:layout_alignEnd="@+id/initiative_input" />
+        android:layout_alignTop="@+id/result"
+        android:layout_alignLeft="@+id/roll"
+        android:layout_alignStart="@+id/roll" />
 </RelativeLayout>

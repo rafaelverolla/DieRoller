@@ -41,6 +41,7 @@
     <string name="success">success!</string>
     <string name="success_plural">successes!</string>
     <string name="failure">Failure!</string>
+    <string name="glitch">Glitch!</string>
     <string name="criticalfailure">CRITICAL FAILURE!</string>
     <string name="title_activity_d20">D20Activity</string>
     <string name="difficulty_class">Difficulty Class:</string>
