@@ -1,26 +1,37 @@
 package com.example.rafael.dieroller;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
-public class MenuActivity extends ActionBarActivity {
+public class D20Activity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_d20);
+
+        //////////start of populating the spinner
+        Spinner spinner = (Spinner) findViewById(R.id.damage_input);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.number_of_sides_string, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+/////////end of populating the spinner
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menu, menu);
+        getMenuInflater().inflate(R.menu.menu_d20, menu);
         return true;
     }
 
@@ -37,20 +48,5 @@ public class MenuActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    public void OpenD20(View view){
-
-        Intent intent = new Intent(this, D20Activity.class);
-        MenuActivity.this.startActivity(intent);
-    }
-    public void OpenOwod(View view){
-
-        Intent intent = new Intent(this, OwodActivity.class);
-        MenuActivity.this.startActivity(intent);
-    }
-    public void OpenMain(View view){
-
-        Intent intent = new Intent(this, MainActivity.class);
-        MenuActivity.this.startActivity(intent);
     }
 }

@@ -24,6 +24,10 @@
             android:name=".OwodActivity"
             android:label="@string/title_activity_owod" >
         </activity>
+        <activity
+            android:name=".D20Activity"
+            android:label="@string/title_activity_d20" >
+        </activity>
     </application>
 
 </manifest>

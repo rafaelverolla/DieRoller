@@ -41,5 +41,9 @@
     <string name="success">successes!</string>
     <string name="failure">Failure!</string>
     <string name="criticalfailure">CRITICAL FAILURE!</string>
+    <string name="title_activity_d20">D20Activity</string>
+    <string name="difficulty_class">Difficulty Class:</string>
+    <string name="roll_d20">Roll d20!</string>
+    <string name="damage">Damage:</string>
 
 </resources>
