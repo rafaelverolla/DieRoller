@@ -109,7 +109,12 @@ public class OwodActivity extends ActionBarActivity {
         if(successes>=Threshold && successes!=0){//checking the results
             Result= Result.concat(Integer.toString(successes));
             Result= Result.concat(" ");
-            Result= Result.concat(this.getString(R.string.success));
+            if(successes>1){
+                Result= Result.concat(this.getString(R.string.success_plural ));
+            }
+            else {
+                Result = Result.concat(this.getString(R.string.success));
+            }
         }else if (successes<0){
             Result= Result.concat(this.getString(R.string.criticalfailure));
         }else if(successes<Threshold || successes==0){

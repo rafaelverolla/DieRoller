@@ -10,20 +10,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/roll_d20"
-        android:id="@+id/button"
-        android:height="150dp"
+        android:id="@+id/rolld20"
+        android:height="60dp"
         android:width="150dp"
-        android:layout_above="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="22dp" />
+        android:onClick="RollD20"
+        android:layout_below="@+id/modifier_input"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/damage"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
+        android:id="@+id/damage"
+        android:layout_alignBaseline="@+id/damage_input_text"
+        android:layout_alignBottom="@+id/damage_input_text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -32,27 +33,30 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:width="75dp" />
+        android:id="@+id/damage_input_text"
+        android:width="50dp"
+        android:text="1"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/rolld20"
+        android:layout_alignLeft="@+id/rolld20"
+        android:layout_alignStart="@+id/rolld20" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/damage_input"
-        android:layout_alignTop="@+id/textView"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
-        android:layout_marginLeft="33dp"
-        android:layout_marginStart="33dp" />
+        android:layout_alignTop="@+id/damage"
+        android:layout_toRightOf="@+id/rolldmg"
+        android:layout_toEndOf="@+id/rolldmg" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/roll"
-        android:id="@+id/button6"
-        android:layout_below="@+id/damage_input"
+        android:id="@+id/rolldmg"
+        android:onClick="RollDamage"
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/modifierdmg_input"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -60,21 +64,20 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/result"
-        android:id="@+id/textView2"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/button6"
+        android:id="@+id/result"
+        android:layout_below="@+id/rolldmg"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="333333333333"
-        android:id="@+id/textView3"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText" />
+        android:id="@+id/result_display"
+        android:layout_alignTop="@+id/result"
+        android:layout_toRightOf="@+id/damage_input_text"
+        android:layout_toEndOf="@+id/damage_input_text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,7 +85,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/difficulty_class"
         android:id="@+id/dc"
-        android:layout_above="@+id/button"
+        android:layout_alignBaseline="@+id/dc_input"
+        android:layout_alignBottom="@+id/dc_input"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -91,9 +95,68 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_above="@+id/button"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:width="75dp" />
+        android:id="@+id/dc_input"
+        android:width="35dp"
+        android:text="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/damage_input"
+        android:layout_alignStart="@+id/damage_input"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/modifier"
+        android:id="@+id/modifier"
+        android:layout_below="@+id/dc_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/modifier_input"
+        android:width="35dp"
+        android:layout_alignTop="@+id/modifier"
+        android:layout_alignLeft="@+id/dc_input"
+        android:layout_alignStart="@+id/dc_input"
+        android:text="0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/modifier"
+        android:id="@+id/modifierdmg"
+        android:layout_below="@+id/damage_input"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/modifierdmg_input"
+        android:width="35dp"
+        android:text="0"
+        android:layout_alignBottom="@+id/modifierdmg"
+        android:layout_alignLeft="@+id/damage_input"
+        android:layout_alignStart="@+id/damage_input" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="d"
+        android:id="@+id/textView"
+        android:width="10dp"
+        android:layout_alignTop="@+id/damage_input"
+        android:layout_toRightOf="@+id/result_display"
+        android:layout_toEndOf="@+id/result_display" />
+
 </RelativeLayout>

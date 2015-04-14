@@ -38,12 +38,14 @@
     <string name="threshold">Threshold:</string>
     <string name="willpower">Willpower</string>
     <string name="specialization">Specialization</string>
-    <string name="success">successes!</string>
+    <string name="success">success!</string>
+    <string name="success_plural">successes!</string>
     <string name="failure">Failure!</string>
     <string name="criticalfailure">CRITICAL FAILURE!</string>
     <string name="title_activity_d20">D20Activity</string>
     <string name="difficulty_class">Difficulty Class:</string>
     <string name="roll_d20">Roll d20!</string>
     <string name="damage">Damage:</string>
+    <string name="modifier">Modifier:</string>
 
 </resources>
