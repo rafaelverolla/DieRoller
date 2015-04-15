@@ -83,7 +83,7 @@ public class D20Activity extends ActionBarActivity {
         Result= Result.concat(" ");
 
         if(d20+mod>= DC){
-            Result= Result.concat(this.getString(R.string.success));
+            Result= Result.concat(this.getString(R.string.Success));
         }else{
             Result = Result.concat(this.getString(R.string.failure));
         }
@@ -116,7 +116,7 @@ public class D20Activity extends ActionBarActivity {
 
         Random random = new Random();//creates an object to generate random numbers
 
-        int i=0;
+        int i=1;
         while(i<=NumberOfDie)
         {
             dice=RandomInteger(1,NumberOfFaces,random);

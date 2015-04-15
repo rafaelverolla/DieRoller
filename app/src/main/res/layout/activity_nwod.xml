@@ -39,7 +39,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="34dp"
         android:layout_marginEnd="34dp"
-        android:width="70dp" />
+        android:width="70dp"
+        android:text="1" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -50,7 +51,8 @@
         android:width="70dp"
         android:layout_alignBottom="@+id/modifier"
         android:layout_alignRight="@+id/number_of_dice_input"
-        android:layout_alignEnd="@+id/number_of_dice_input" />
+        android:layout_alignEnd="@+id/number_of_dice_input"
+        android:text="0" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,7 +61,8 @@
         android:id="@+id/roll"
         android:layout_below="@+id/modifier"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:onClick="Roll" />
 
     <Button
         android:layout_width="wrap_content"
@@ -68,7 +71,8 @@
         android:id="@+id/rollchance"
         android:layout_marginTop="46dp"
         android:layout_below="@+id/roll"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="RollChanceDie" />
 
     <TextView
         android:layout_width="wrap_content"

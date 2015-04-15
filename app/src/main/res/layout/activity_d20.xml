@@ -156,7 +156,6 @@
         android:id="@+id/textView"
         android:width="10dp"
         android:layout_alignTop="@+id/damage_input"
-        android:layout_toRightOf="@+id/result_display"
-        android:layout_toEndOf="@+id/result_display" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

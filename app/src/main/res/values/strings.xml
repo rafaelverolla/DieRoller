@@ -15,7 +15,6 @@
     <string-array name="difficulty_string">
         <item>3</item>
         <item>4</item>
-        <item>3</item>
         <item>5</item>
         <item>6</item>
         <item>7</item>
@@ -39,6 +38,7 @@
     <string name="willpower">Willpower</string>
     <string name="specialization">Specialization</string>
     <string name="success">success!</string>
+    <string name="Success">Success!</string>
     <string name="success_plural">successes!</string>
     <string name="failure">Failure!</string>
     <string name="glitch">Glitch!</string>
