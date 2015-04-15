@@ -51,5 +51,7 @@
     <string name="title_activity_shadowrun5th">Shadowrun5thActivity</string>
     <string name="initiative">Initiative:</string>
     <string name="roll_init">Roll Initiative!</string>
+    <string name="title_activity_nwod">NwodActivity</string>
+    <string name="chance_die">Chance Die</string>
 
 </resources>

@@ -32,6 +32,10 @@
             android:name=".Shadowrun5thActivity"
             android:label="@string/title_activity_shadowrun5th" >
         </activity>
+        <activity
+            android:name=".NwodActivity"
+            android:label="@string/title_activity_nwod" >
+        </activity>
     </application>
 
 </manifest>

@@ -53,9 +53,16 @@ public class MenuActivity extends ActionBarActivity {
         Intent intent = new Intent(this, Shadowrun5thActivity.class);
         MenuActivity.this.startActivity(intent);
     }
+    public void OpenNwod(View view){
+
+        Intent intent = new Intent(this, NwodActivity.class);
+        MenuActivity.this.startActivity(intent);
+    }
     public void OpenMain(View view){
 
         Intent intent = new Intent(this, MainActivity.class);
         MenuActivity.this.startActivity(intent);
     }
 }
+
+
