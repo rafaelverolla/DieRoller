@@ -9,20 +9,22 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".MenuActivity"
-            android:label="@string/title_activity_menu" >
+            android:label="@string/title_activity_menu"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".OwodActivity"
-            android:label="@string/title_activity_owod" >
+            android:label="@string/title_activity_owod"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".D20Activity"
@@ -30,11 +32,13 @@
         </activity>
         <activity
             android:name=".Shadowrun5thActivity"
-            android:label="@string/title_activity_shadowrun5th" >
+            android:label="@string/title_activity_shadowrun5th"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".NwodActivity"
-            android:label="@string/title_activity_nwod" >
+            android:label="@string/title_activity_nwod"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

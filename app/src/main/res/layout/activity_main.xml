@@ -90,6 +90,7 @@
         android:editable="false"
         android:textColor="#ffffffff"
         android:width="75dp"
-        android:backgroundTint="#ff7f7f7f" />
+        android:backgroundTint="#ff7f7f7f"
+        android:text="0" />
 
 </RelativeLayout>

@@ -45,7 +45,7 @@
         android:width="70dp"
         android:text="1"
         android:textColor="#ffffffff"
-        android:backgroundTint="#ff747474" />
+        android:backgroundTint="#ff7f7f7f" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
         android:layout_alignEnd="@+id/number_of_dice_input"
         android:text="0"
         android:textColor="#ffffffff"
-        android:backgroundTint="#ff747474" />
+        android:backgroundTint="#ff7f7f7f" />
 
     <Button
         android:layout_width="wrap_content"

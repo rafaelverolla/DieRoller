@@ -26,13 +26,13 @@
     <string name="result">Result:</string>
     <string name="roll">Roll!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_menu">Die Roller</string>
+    <string name="title_activity_menu">Dice Roller</string>
     <string name="generic">Generic</string>
     <string name="nwod">nWoD</string>
     <string name="owod">oWoD</string>
     <string name="shadowrun5">Shadowrun 5th</string>
     <string name="d20">D20</string>
-    <string name="title_activity_owod">Old WoD DieRoller</string>
+    <string name="title_activity_owod">Old WoD Dice Roller</string>
     <string name="difficulty">Difficulty:</string>
     <string name="threshold">Threshold:</string>
     <string name="willpower">Willpower</string>
@@ -43,15 +43,16 @@
     <string name="failure">Failure!</string>
     <string name="glitch">Glitch!</string>
     <string name="criticalfailure">CRITICAL FAILURE!</string>
-    <string name="title_activity_d20">D20Activity</string>
+    <string name="title_activity_d20">D20 Dice Roller</string>
+    <string name="title_activity_main">Generic Dice Roller</string>
     <string name="difficulty_class">Difficulty Class:</string>
     <string name="roll_d20">Roll d20!</string>
     <string name="damage">Damage:</string>
     <string name="modifier">Modifier:</string>
-    <string name="title_activity_shadowrun5th">Shadowrun5thActivity</string>
+    <string name="title_activity_shadowrun5th">Shadowrun5th Dice Roller</string>
     <string name="initiative">Initiative:</string>
     <string name="roll_init">Roll Initiative!</string>
-    <string name="title_activity_nwod">NwodActivity</string>
+    <string name="title_activity_nwod">nWoD Dice Roller</string>
     <string name="chance_die">Chance Die</string>
 
 </resources>
