@@ -76,16 +76,14 @@ public class D20Activity extends ActionBarActivity {
 
         Result= Integer.toString(d20);//put the number on a string
 
-        Result= Result.concat(" + (");
-        Result= Result.concat(Integer.toString(mod));
-        Result= Result.concat(") = ");
-        Result= Result.concat(Integer.toString(d20+mod));
-        Result= Result.concat(" ");
+
+
+        Result+=" + (" + Integer.toString(mod) + ") = "+ Integer.toString(d20+mod) + " ";
 
         if(d20+mod>= DC){
-            Result= Result.concat(this.getString(R.string.Success));
+            Result+= this.getString(R.string.Success);
         }else{
-            Result = Result.concat(this.getString(R.string.failure));
+            Result += this.getString(R.string.failure);
         }
 
         ///Displaying the result
