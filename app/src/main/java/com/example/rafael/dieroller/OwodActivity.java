@@ -26,7 +26,7 @@ public class OwodActivity extends ActionBarActivity {
 //////////start of populating the spinner
         Spinner spinner = (Spinner) findViewById(R.id.diff_input);
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.difficulty_string, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.difficulty_string, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
@@ -39,7 +39,7 @@ public class OwodActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.menu_owod, menu);
+        // getMenuInflater().inflate(R.menu.menu_owod, menu);
         return true;
     }
 
@@ -62,83 +62,81 @@ public class OwodActivity extends ActionBarActivity {
 
 
         ///get the value selected in the spinner, for the diff
-        Spinner mySpinner=(Spinner) findViewById(R.id.diff_input);
-        Integer Diff = parseInt(mySpinner.getSelectedItem().toString());
+        Spinner mySpinner = (Spinner) findViewById(R.id.diff_input);
+        Integer diff = parseInt(mySpinner.getSelectedItem().toString());
         ///end of getting the value of the spinner
 
         ///start of getting the number of die
-        EditText NumberOfDieInput=(EditText) findViewById(R.id.number_of_die_input);
-        Integer Number_Of_Die = parseInt(NumberOfDieInput.getText().toString());
+        EditText NumberOfDieInput = (EditText) findViewById(R.id.number_of_die_input);
+        Integer numberOfDie = parseInt(NumberOfDieInput.getText().toString());
         ///end of getting the number of die
 
         ///start of getting the threshold
-        EditText ThresholdInput=(EditText) findViewById(R.id.threshold_input);
-        Integer Threshold = parseInt(ThresholdInput.getText().toString());
+        EditText ThresholdInput = (EditText) findViewById(R.id.threshold_input);
+        Integer threshold = parseInt(ThresholdInput.getText().toString());
         ///end of getting
 
         CheckBox Willpower = (CheckBox) findViewById(R.id.willcheckbox);//getting willpower
         CheckBox Spec = (CheckBox) findViewById(R.id.speccheckbox);//getting spec
 
         Random random = new Random();//creates an object to generate random numbers
-        String Result="";
-        int i=1; int successes=0; int dice;
-        if(Willpower.isChecked()){
+        String result = "";
+        int i = 1;
+        int successes = 0;
+        int dice;
+        if (Willpower.isChecked()) {
             successes++;
         }
 
-        while(i<=Number_Of_Die){//rolling the die
-            dice=RandomInteger(1,10,random);//generates a number
-            if(dice>=Diff){
+        while (i <= numberOfDie) {//rolling the die
+            dice = getRandomInteger(1, 10, random);//generates a number
+            if (dice >= diff) {
                 successes++;
             }
-            if(dice==1){
+            if (dice == 1) {
                 successes--;
             }
-            if(dice==10&&Spec.isChecked()){
+            if (dice == 10 && Spec.isChecked()) {
                 i--;
             }
-            Result = Result.concat(Integer.toString(dice));//put on the result string
+            result +=Integer.toString(dice);//put on the result string
 
-            if(i!=Number_Of_Die) {
-                Result = Result.concat(", ");
+            if (i != numberOfDie) {
+                result +=", ";
             }
             i++;
         }
-        Result = Result.concat(". ");
+        result +=". ";
 
-        if(successes>=Threshold && successes!=0){//checking the results
-            Result= Result.concat(Integer.toString(successes));
-            Result= Result.concat(" ");
-            if(successes>1){
-                Result= Result.concat(this.getString(R.string.success_plural ));
+        if (successes >= threshold && successes != 0) {//checking the results
+            result +=Integer.toString(successes);
+            result +=" ";
+            if (successes > 1) {
+                result +=this.getString(R.string.success_plural);
+            } else {
+                result +=this.getString(R.string.success);
             }
-            else {
-                Result = Result.concat(this.getString(R.string.success));
-            }
-        }else if (successes<0){
-            Result= Result.concat(this.getString(R.string.criticalfailure));
-        }else if(successes<Threshold || successes==0){
-            Result= Result.concat(this.getString(R.string.failure));
+        } else if (successes < 0) {
+            result +=this.getString(R.string.criticalfailure);
+        } else if (successes < threshold || successes == 0) {
+            result +=this.getString(R.string.failure);
         }
 
 
-
-
         ///Displaying the result
-        final TextView Result_Display= (TextView) findViewById(R.id.result_display);
-        Result_Display.setText(Result);
+        final TextView Result_Display = (TextView) findViewById(R.id.result_display);
+        Result_Display.setText(result);
         ///end of displaying the result
     }
 
-    private static int RandomInteger(int aStart, int aEnd, Random aRandom){///function that generates a random number between 1 and N
-
+    private static int getRandomInteger(int aStart, int aEnd, Random aRandom) {///function that generates a random number between 1 and N
 
 
         //get the range, casting to long to avoid overflow problems
-        long range = (long)aEnd - (long)aStart + 1;
+        long range = (long) aEnd - (long) aStart + 1;
         // compute a fraction of the range, 0 <= frac < range
-        long fraction = (long)(range * aRandom.nextDouble());
-        int randomNumber =  (int)(fraction + aStart);
+        long fraction = (long) (range * aRandom.nextDouble());
+        int randomNumber = (int) (fraction + aStart);
 
         return randomNumber;
     }

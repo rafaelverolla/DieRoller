@@ -10,15 +10,13 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import java.util.Random;
 
 import static java.lang.Integer.parseInt;
 
 
 public class MainActivity extends ActionBarActivity {
-
-
-
 
 
     @Override
@@ -42,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.menu_main, menu);
+        // getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -65,48 +63,46 @@ public class MainActivity extends ActionBarActivity {
 
 
         ///get the value selected in the spinner
-        Spinner mySpinner=(Spinner) findViewById(R.id.number_of_sides_input);
-        Integer Number_of_Faces = parseInt(mySpinner.getSelectedItem().toString());
+        Spinner mySpinner = (Spinner) findViewById(R.id.number_of_sides_input);
+        Integer numberOfFaces = parseInt(mySpinner.getSelectedItem().toString());
         ///end of getting the value of the spinner
 
         ///start of getting the number of die
-        EditText myEditText=(EditText) findViewById(R.id.number_of_die_input);
-        Integer Number_Of_Die = parseInt(myEditText.getText().toString());
+        EditText myEditText = (EditText) findViewById(R.id.number_of_die_input);
+        Integer numberOfDice = parseInt(myEditText.getText().toString());
         ///end of getting the number of die
 
         Random random = new Random();//creates an object to generate random numbers
-        String Result="";
-        int i=1;
-        while(i<=Number_Of_Die){
+        String Result = "";
+        int i = 1;
+        while (i <= numberOfDice) {
 
-          Result = Result.concat(Integer.toString(RandomInteger(1,Number_of_Faces,random)));//generates a number
-          if(i!=Number_Of_Die) {
-              Result = Result.concat(", ");
-          }
-          i++;
+            Result = Result.concat(Integer.toString(getRandomInteger(1, numberOfFaces, random)));//generates a number
+            if (i != numberOfDice) {
+                Result = Result.concat(", ");
+            }
+            i++;
         }
         Result = Result.concat(".");
 
 
         ///Displaying the result
-        final TextView Result_Display= (TextView) findViewById(R.id.result_display);
-         Result_Display.setText(Result);
+        final TextView Result_Display = (TextView) findViewById(R.id.result_display);
+        Result_Display.setText(Result);
         ///end of displaying the result
     }
 
-    private static int RandomInteger(int aStart, int aEnd, Random aRandom){///function that generates a random number between 1 and N
-
+    private static int getRandomInteger(int aStart, int aEnd, Random aRandom) {///function that generates a random number between 1 and N
 
 
         //get the range, casting to long to avoid overflow problems
-        long range = (long)aEnd - (long)aStart + 1;
+        long range = (long) aEnd - (long) aStart + 1;
         // compute a fraction of the range, 0 <= frac < range
-        long fraction = (long)(range * aRandom.nextDouble());
-        int randomNumber =  (int)(fraction + aStart);
+        long fraction = (long) (range * aRandom.nextDouble());
+        int randomNumber = (int) (fraction + aStart);
 
         return randomNumber;
     }
-
 
 
 }

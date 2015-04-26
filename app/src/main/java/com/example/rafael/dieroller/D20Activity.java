@@ -38,7 +38,7 @@ public class D20Activity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-       // getMenuInflater().inflate(R.menu.menu_d20, menu);
+        // getMenuInflater().inflate(R.menu.menu_d20, menu);
         return true;
     }
 
@@ -57,87 +57,86 @@ public class D20Activity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void RollD20(View view){
+    public void RollD20(View view) {
 
-        ///getting the dificulty class
-        EditText myEditText=(EditText) findViewById(R.id.dc_input);
-        Integer DC = parseInt(myEditText.getText().toString());
+        ///getting the difficulty class
+        EditText myEditText = (EditText) findViewById(R.id.dc_input);
+        Integer dC = parseInt(myEditText.getText().toString());
         ///finish it
 
         ///getting the modifier
-        EditText myEditText2=(EditText) findViewById(R.id.modifier_input);
+        EditText myEditText2 = (EditText) findViewById(R.id.modifier_input);
         Integer mod = parseInt(myEditText2.getText().toString());
         ///finish it
 
         Random random = new Random();//creates an object to generate random numbers
-        String Result; int d20;
+        String result;
+        int d20;
 
-        d20= RandomInteger(1,20,random);//generates the number
+        d20 = getRandomInteger(1, 20, random);//generates the number
 
-        Result= Integer.toString(d20);//put the number on a string
+        result = Integer.toString(d20);//put the number on a string
 
 
+        result += " + (" + Integer.toString(mod) + ") = " + Integer.toString(d20 + mod) + " ";
 
-        Result+=" + (" + Integer.toString(mod) + ") = "+ Integer.toString(d20+mod) + " ";
-
-        if(d20+mod>= DC){
-            Result+= this.getString(R.string.Success);
-        }else{
-            Result += this.getString(R.string.failure);
+        if (d20 + mod >= dC) {
+            result += this.getString(R.string.Success);
+        } else {
+            result += this.getString(R.string.failure);
         }
 
         ///Displaying the result
-        final TextView Result_Display= (TextView) findViewById(R.id.result_display);
-        Result_Display.setText(Result);
+        final TextView Result_Display = (TextView) findViewById(R.id.result_display);
+        Result_Display.setText(result);
         ///end of displaying the result
     }
 
     public void RollDamage(View view) {
 
         ///getting the number of die
-        EditText myEditText=(EditText) findViewById(R.id.damage_input_text);
+        EditText myEditText = (EditText) findViewById(R.id.damage_input_text);
         Integer NumberOfDie = parseInt(myEditText.getText().toString());
         ///finish it
 
         ///getting the modifier
-        EditText myEditText2=(EditText) findViewById(R.id.modifierdmg_input);
+        EditText myEditText2 = (EditText) findViewById(R.id.modifierdmg_input);
         Integer Mod = parseInt(myEditText2.getText().toString());
         ///finish it
 
 
         ///get the value selected in the spinner, for the type of dice
-        Spinner mySpinner=(Spinner) findViewById(R.id.damage_input);
+        Spinner mySpinner = (Spinner) findViewById(R.id.damage_input);
         Integer NumberOfFaces = parseInt(mySpinner.getSelectedItem().toString());
         ///end of getting the value of the spinner
 
-        int dice, total=0;
+        int dice;
+        int total = 0;
 
         Random random = new Random();//creates an object to generate random numbers
 
-        int i=1;
-        while(i<=NumberOfDie)
-        {
-            dice=RandomInteger(1,NumberOfFaces,random);
-            total= total+dice+Mod;
+        int i = 1;
+        while (i <= NumberOfDie) {
+            dice = getRandomInteger(1, NumberOfFaces, random);
+            total = total + dice + Mod;
             i++;
         }
 
 
-
         ///Displaying the result
-        final TextView Result_Display= (TextView) findViewById(R.id.result_display);
+        final TextView Result_Display = (TextView) findViewById(R.id.result_display);
         Result_Display.setText(Integer.toString(total) + " damage");
         ///end of displaying the result
     }
-    private static int RandomInteger(int aStart, int aEnd, Random aRandom){///function that generates a random number between 1 and N
 
+    private static int getRandomInteger(int aStart, int aEnd, Random aRandom) {///function that generates a random number between 1 and N
 
 
         //get the range, casting to long to avoid overflow problems
-        long range = (long)aEnd - (long)aStart + 1;
+        long range = (long) aEnd - (long) aStart + 1;
         // compute a fraction of the range, 0 <= frac < range
-        long fraction = (long)(range * aRandom.nextDouble());
-        int randomNumber =  (int)(fraction + aStart);
+        long fraction = (long) (range * aRandom.nextDouble());
+        int randomNumber = (int) (fraction + aStart);
 
         return randomNumber;
     }

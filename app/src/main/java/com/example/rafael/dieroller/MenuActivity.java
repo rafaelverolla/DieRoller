@@ -43,27 +43,32 @@ public class MenuActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void OpenD20(View view){
+
+    public void OpenD20(View view) {
 
         Intent intent = new Intent(this, D20Activity.class);
         MenuActivity.this.startActivity(intent);
     }
-    public void OpenOwod(View view){
+
+    public void OpenOwod(View view) {
 
         Intent intent = new Intent(this, OwodActivity.class);
         MenuActivity.this.startActivity(intent);
     }
-    public void OpenShadowrun5(View view){
+
+    public void OpenShadowrun5(View view) {
 
         Intent intent = new Intent(this, Shadowrun5thActivity.class);
         MenuActivity.this.startActivity(intent);
     }
-    public void OpenNwod(View view){
+
+    public void OpenNwod(View view) {
 
         Intent intent = new Intent(this, NwodActivity.class);
         MenuActivity.this.startActivity(intent);
     }
-    public void OpenMain(View view){
+
+    public void OpenMain(View view) {
 
         Intent intent = new Intent(this, MainActivity.class);
         MenuActivity.this.startActivity(intent);
